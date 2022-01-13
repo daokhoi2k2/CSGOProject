@@ -1,0 +1,145 @@
+.mr-3 {
+    margin-right: 15px !important;
+}
+
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: #fff;
+  background-color: #34495e;
+  background-image: none;
+  cursor: pointer;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  border-radius: 0.25em;
+  overflow: hidden;
+  margin: 0 4px;
+}
+
+.select.select-sm {
+  width: 10em;
+}
+
+.select.select-md {
+    width: 12em;
+}
+
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: #34495e;
+  transition: 0.25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+
+.tables-title {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tables-filter {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Search Box */
+.search-box {
+  height: 60px;
+  background: #353535;
+  line-height: 40px;
+  padding: 10px;
+  border-radius: 60px;
+  margin: 0 40px;
+}
+
+.search-input {
+  background: #353535;
+  color: #fff;
+  outline: none;
+  border: none;
+  line-height: 40px;
+  width: 0px;
+  float: left;
+  font-size: 14px;
+  transition: 0.7s ease;
+  font-family: sans-serif;
+}
+
+.search-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background: #353535;
+  padding: 12px;
+  border-radius: 50%;
+  float: right;
+  color: #ff5722;
+  transition: 0.4s ease;
+}
+
+.search-box:hover > .search-input {
+  width: 240px;
+  margin: 0px 8px;
+}
+
+.search-input:focus {
+  width: 240px;
+  margin: 0px 8px;
+}
+
+.search-box:hover > .search-btn {
+  background: #fff;
+}
+
+.search-input:focus + .search-btn {
+  background: #fff;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
