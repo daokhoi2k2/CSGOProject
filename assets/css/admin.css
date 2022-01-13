@@ -143,3 +143,30 @@ select::-ms-expand {
 .ml-auto {
   margin-left: auto !important;
 }
+
+.poster:hover::after{
+  display: block;
+
+}
+
+.poster {
+  position: relative;
+  cursor: pointer;
+}
+
+.poster::after {
+  content: "";
+  top: 50%;
+  left: 25%;
+  opacity: 0.7;
+  transform: translateY(-50%);
+  display: none;
+  position: absolute;
+  border-left: 15px solid #fff;
+  border-top: 10px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 10px solid transparent;
+  z-index: 100;
+  position: absolute;
+}
+
