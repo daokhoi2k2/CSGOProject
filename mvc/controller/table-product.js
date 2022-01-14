@@ -4,12 +4,7 @@ axios
   .get("http://localhost:4000/knifes")
   .then((res) => res.data)
   .then((data) => {
-    const result = data.map(async (product) => {
-      const resInfoSteam = await axios.get(
-        `http://localhost:3000/infoItem/${encodeURI(product.market_hash_name)}`
-      );
-      const dataInfoSteam = resInfoSteam.data;
-        console.log(dataInfoSteam)
+    const result = data.map((product) => {
       return `<tr>
                   <td>
                     <div class="d-flex px-2">
@@ -29,7 +24,7 @@ axios
                   </td>
                   <td>
                     <p class="text-sm font-weight-bold mb-0">
-                      ${dataInfoSteam.lowest_price || "Out of stock"}
+                      ${"12.938.219đ"}
                     </p>
                   </td>
                   <td class="align-middle text-center text-sm">
@@ -42,7 +37,7 @@ axios
                       class="d-flex align-items-center justify-content-center"
                     >
                       <span class="me-2 text-xs font-weight-bold"
-                        >${dataInfoSteam.volume || 0}</span
+                        >60</span
                       >
                       <div>
                         <div class="progress">
@@ -52,7 +47,7 @@ axios
                             aria-valuenow="1"
                             aria-valuemin="0"
                             aria-valuemax="100"
-                            style="width: ${dataInfoSteam.volume || 0}%"
+                            style="width: 60%"
                           ></div>
                         </div>
                       </div>
@@ -65,10 +60,5 @@ axios
                   </td>
                 </tr>`;
     });
-
-    // Result return : [ Promise, Promise, Promise, Promise, ....] so we need use Promise.all to get value
-    Promise.all(result).then((data) => {
-      console.log(data);
-      tbodyResultElement.innerHTML = data.join("");
-    });
+    tbodyResultElement.innerHTML = result.join("");
   });
