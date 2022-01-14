@@ -1,5 +1,5 @@
 .mr-3 {
-    margin-right: 15px !important;
+  margin-right: 15px !important;
 }
 
 select {
@@ -36,7 +36,58 @@ select::-ms-expand {
 }
 
 .select.select-md {
-    width: 12em;
+  width: 12em;
+}
+
+.select.select-full {
+  width: 100%;
+}
+
+.bgselect-primary {
+  background-image: linear-gradient(195deg, #999393 0%, #646464 100%);
+}
+
+.select-bgselect::after {
+  background-image: linear-gradient(195deg, #999393 0%, #646464 100%);
+  color: #fff;
+}
+
+.btn-tertiary {
+  color: #555;
+  padding: 0;
+  line-height: 40px;
+  width: 300px;
+  margin: auto;
+  display: block;
+  border: 2px solid #555;
+}
+.btn-tertiary:hover,
+.btn-tertiary:focus {
+  color: #888;
+  border-color: #888;
+}
+/* input file style */
+.input-file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.input-file + .js-labelFile {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.input-file + .js-labelFile .icon:before {
+  content: "\f093";
+}
+.input-file + .js-labelFile.has-file .icon:before {
+  content: "\f00c";
+  color: #5aac7b;
 }
 
 /* Arrow */
@@ -144,9 +195,8 @@ select::-ms-expand {
   margin-left: auto !important;
 }
 
-.poster:hover::after{
+.poster:hover::after {
   display: block;
-
 }
 
 .poster {
@@ -170,3 +220,12 @@ select::-ms-expand {
   position: absolute;
 }
 
+.lesson-form .form-control {
+  border: 1px solid #d2d6da;
+  padding-left: 15px;
+}
+
+.border-gray {
+  border: 1px solid #ddd !important;
+  border-radius: 5px;
+}
