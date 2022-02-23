@@ -36,22 +36,15 @@
     <link rel="stylesheet" href="/assets/css/main.css" />
     <!-- responsive -->
     <link rel="stylesheet" href="/assets/css/responsive.css" />
-    <!-- axios lib  -->
+    <!-- Number format -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <!-- Axios lib -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"
       integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <!-- Number format -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
-    <!-- Toast lib -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
-    />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   </head>
   <body>
     <!--PreLoader-->
@@ -94,7 +87,7 @@
                       <a class="shopping-cart" href="/client/cart.html">
                         <i class="fas fa-shopping-cart"></i>
                       </a>
-                      <a class="shopping-cart" href="/sign-in.html">
+                      <a class="shopping-cart" href="sign-in.html">
                         <i class="fas fa-user"></i>
                       </a>
                       <a class="mobile-hide search-bar-icon" href="#">
@@ -139,8 +132,8 @@
         <div class="row">
           <div class="col-lg-8 offset-lg-2 text-center">
             <div class="breadcrumb-text">
-              <p>THÔNG TIN</p>
-              <h1>CHI TIẾT</h1>
+              <p>DANH SÁCH</p>
+              <h1>THEO LOẠI</h1>
             </div>
           </div>
         </div>
@@ -148,16 +141,61 @@
     </div>
     <!-- end breadcrumb section -->
 
-    <!-- single product -->
-    <div class="single-product mt-150 mb-150" id="product-detail"></div>
-    <!-- end single product -->
+    <!-- products -->
+    <div class="product-section mt-100 mb-100">
+      <div class="container">
+        <!-- <div class="filter-product mb-5">
+          <div class="row">
+            <div class="col-2">
+              <label for="">Loại dao: </label>
+              <select class="custom-select" id="gender2">
+                <option selected>Tất cả</option>
+                <% for(let type of types) { %>
+                <option value="<%= type._id %> "><%= type.name %></option>
+                <% } %>
+              </select>
+            </div>
+            <div class="col-2">
+              <label for="">Lọc: </label>
+              <select class="custom-select" id="gender2">
+                <option selected>Mặc định</option>
+                <option value="1">Giá từ cao đến thấp</option>
+                <option value="2">Giá từ thấp đến cao</option>
+              </select>
+            </div>
+            <div class="col-7">
+              <label for="">Tìm kiếm: </label>
+              <input type="text" class="form-control" id="nameKnife" placeholder="Tên sản phẩm" />
+            </div>
+            <div class="col-1 text-center d-flex">
+              <button type="submit" class="btn btn-success mt-auto">Lọc</button>
+            </div>
+          </div>
+        </div> -->
+        <div class="row product-lists"></div>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="pagination-wrap">
+              <ul>
+                <li><a href="#">Prev</a></li>
+                <li><a href="#">1</a></li>
+                <li><a class="active" href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">Next</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end products -->
 
     <!-- logo carousel -->
     <div class="logo-carousel-section">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="logo-carousel-inner">
+            <div class="logo-carousel-inner d-flex justify-content-lg-between">
               <div class="single-logo-item">
                 <img src="/assets/img/company-logos/1.png" alt="" />
               </div>
@@ -230,6 +268,42 @@
     </div>
     <!-- end footer -->
 
+    <!-- copyright -->
+    <div class="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <p>
+              Copyrights &copy; 2019 -
+              <a href="https://imransdesign.com/">Imran Hossain</a>, All Rights Reserved.
+            </p>
+          </div>
+          <div class="col-lg-6 text-right col-md-12">
+            <div class="social-icons">
+              <ul>
+                <li>
+                  <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                  <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a href="#" target="_blank"><i class="fab fa-dribbble"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end copyright -->
+
     <!-- jquery -->
     <script src="/assets/js/jquery-1.11.3.min.js"></script>
     <!-- bootstrap -->
@@ -241,7 +315,7 @@
     <!-- waypoints -->
     <script src="/assets/js/waypoints.js"></script>
     <!-- owl carousel -->
-    <script src="/assets/js/owl.carousel.min.js"></script>
+    <!-- <script src="/assets/js/owl.carousel.min.js"></script> -->
     <!-- magnific popup -->
     <script src="/assets/js/jquery.magnific-popup.min.js"></script>
     <!-- mean menu -->
@@ -250,8 +324,8 @@
     <script src="/assets/js/sticker.js"></script>
     <!-- main js -->
     <script src="/assets/js/main.js"></script>
-    <!-- product-detail js -->
-    <script src="/mvc/controller/product-detail.js"></script>
+    <!-- type js -->
+    <script src="/mvc/controller/type.js"></script>
     <!-- nav js -->
     <script src="/mvc/controller/nav.js"></script>
   </body>

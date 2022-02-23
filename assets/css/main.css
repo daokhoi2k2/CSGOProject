@@ -32,6 +32,10 @@ body img {
   max-width: 100%;
 }
 
+.errorMsg {
+  color: red;
+}
+
 a {
   cursor: pointer;
   text-decoration: none;
@@ -51,7 +55,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   font-weight: 700;
   margin: 0 0 1.25rem 0;
   color: #051922;
@@ -1324,6 +1328,10 @@ ul.product-share li:hover a {
   box-shadow: none;
 }
 
+.single-product-item h3 {
+  min-height: 63px;
+}
+
 .search-bar-tablecell button[type=submit] {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -2066,7 +2074,7 @@ a.video-play-btn {
 }
 
 .abt-bg {
-  background-image: url(../img/abt.jpg);
+  background-image: url(../img/Coolwallpaper.jfif);
   height: 100%;
   width: 100%;
   background-size: cover;

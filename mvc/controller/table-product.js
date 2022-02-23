@@ -24,7 +24,7 @@ axios
                   </td>
                   <td>
                     <p class="text-sm font-weight-bold mb-0">
-                      ${"12.938.219đ"}
+                      ${numeral(product.price).format('0,0').replaceAll(",", ".")}
                     </p>
                   </td>
                   <td class="align-middle text-center text-sm">
@@ -37,7 +37,7 @@ axios
                       class="d-flex align-items-center justify-content-center"
                     >
                       <span class="me-2 text-xs font-weight-bold"
-                        >60</span
+                        >${product.volume}</span
                       >
                       <div>
                         <div class="progress">
@@ -47,7 +47,7 @@ axios
                             aria-valuenow="1"
                             aria-valuemin="0"
                             aria-valuemax="100"
-                            style="width: 60%"
+                            style="width: ${product.volume}%"
                           ></div>
                         </div>
                       </div>
@@ -62,3 +62,16 @@ axios
     });
     tbodyResultElement.innerHTML = result.join("");
   });
+
+const totalOrder = $("#totalOrder")[0];
+const orderAmount = $("#orderAmount")[0];
+axios.get("http://localhost:4000/orders")
+  .then((res) => res.data)
+  .then((data) => {
+    const total = data.reduce((acc, cur) => {
+      return acc + cur.total;
+    }, 0);
+
+    orderAmount.innerHTML = data.length;
+    totalOrder.innerHTML = numeral(total).format('0,0').replaceAll(",", ".") + " đ";
+  })
